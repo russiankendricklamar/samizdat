@@ -1,4 +1,5 @@
 import React from 'react';
+import {assetUrl} from './utils/assetUrl';
 
 const FloatingWord = ({ word, className }: { word: string, className: string }) => (
   <div className={`absolute font-heading uppercase text-ink opacity-10 pointer-events-none select-none ${className}`} style={{ fontSize: '15vw', lineHeight: '0.8' }}>
@@ -13,7 +14,7 @@ const HeroSection = () => {
       <FloatingWord word="ОХРАНИ" className="bottom-20 -right-20 rotate-rand-4" />
       
       <div className="absolute inset-0 z-0 flex items-center justify-center">
-        <img src="/1.jpg" alt="Church silhouette" className="w-[80vw] h-[80vh] object-contain opacity-60 mix-blend-multiply grayscale contrast-200" onError={(e) => e.currentTarget.src = 'https://picsum.photos/seed/church1/1000/1000?grayscale'} />
+        <img src={assetUrl('1.jpg')} alt="Church silhouette" className="w-[80vw] h-[80vh] object-contain opacity-60 mix-blend-multiply grayscale contrast-200" onError={(e) => e.currentTarget.src = 'https://picsum.photos/seed/church1/1000/1000?grayscale'} />
       </div>
       
       <div className="relative z-10 text-center px-4 flex flex-col items-center mt-20">
@@ -21,7 +22,7 @@ const HeroSection = () => {
           <h1 className="text-[10vw] md:text-[8vw] font-heading text-ink uppercase tracking-tighter rotate-rand-1 mb-2 brutal-shadow-red bg-paper px-6 py-2 brutal-border inline-block">
             Кто живет
           </h1>
-          <img src="/3.jpg" className="absolute -top-10 -right-20 w-40 h-40 object-cover mix-blend-multiply rotate-rand-3" onError={(e) => e.currentTarget.style.display = 'none'} />
+          <img src={assetUrl('3.jpg')} className="absolute -top-10 -right-20 w-40 h-40 object-cover mix-blend-multiply rotate-rand-3" onError={(e) => e.currentTarget.style.display = 'none'} />
         </div>
         
         <h1 className="text-[12vw] md:text-[10vw] font-heading text-paper uppercase tracking-tighter rotate-rand-4 mb-2 bg-ink px-8 py-2 brutal-border text-shadow-red z-20 -ml-10">
@@ -48,7 +49,7 @@ const HeroSection = () => {
 const MaterialsSection = () => {
   return (
     <section className="py-24 px-4 md:px-10 bg-paper relative overflow-hidden">
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'url(/5.jpg)', backgroundSize: '300px' }}></div>
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: `url(${assetUrl('5.jpg')})`, backgroundSize: '300px' }}></div>
       <FloatingWord word="БЛОК" className="top-1/2 left-1/4 -translate-y-1/2 rotate-rand-2" />
       
       <div className="relative z-10 max-w-7xl mx-auto">
@@ -61,7 +62,7 @@ const MaterialsSection = () => {
           <article className="relative flex flex-col md:flex-row gap-8 items-start">
             <div className="md:w-1/2 brutal-border p-3 bg-paper brutal-shadow z-20 rotate-rand-2">
               <div className="lubok-border p-2">
-                <img src="/6.jpg" alt="Panel" className="w-full h-[60vh] object-cover grayscale contrast-150" onError={(e) => e.currentTarget.src = 'https://picsum.photos/seed/panel/800/1000?grayscale'} />
+                <img src={assetUrl('6.jpg')} alt="Panel" className="w-full h-[60vh] object-cover grayscale contrast-150" onError={(e) => e.currentTarget.src = 'https://picsum.photos/seed/panel/800/1000?grayscale'} />
               </div>
             </div>
             <div className="md:w-1/2 relative z-30 md:-ml-16 mt-10 md:mt-20">
@@ -82,7 +83,7 @@ const MaterialsSection = () => {
           {/* Article 2 */}
           <article className="relative flex flex-col md:flex-row-reverse gap-8 items-start">
             <div className="md:w-5/12 brutal-border p-3 bg-paper brutal-shadow-red z-20 rotate-rand-3">
-              <img src="/4.jpg" alt="Blood" className="w-full h-[50vh] object-cover grayscale contrast-200 riso-red" onError={(e) => e.currentTarget.src = 'https://picsum.photos/seed/blood/800/800?grayscale'} />
+              <img src={assetUrl('4.jpg')} alt="Blood" className="w-full h-[50vh] object-cover grayscale contrast-200 riso-red" onError={(e) => e.currentTarget.src = 'https://picsum.photos/seed/blood/800/800?grayscale'} />
             </div>
             <div className="md:w-7/12 relative z-30 md:-mr-20 mt-10">
               <h3 className="text-6xl md:text-8xl font-heading uppercase mb-6 text-blood text-shadow-red rotate-rand-1 bg-paper inline-block px-4 border-4 border-blood">
@@ -106,12 +107,12 @@ const MaterialsSection = () => {
 
 const ArchiveSection = () => {
   const images = [
-    "/2.jpg", "/7.jpg", "/8.jpg", "/9.jpg", "/10.jpg", "/11.jpg", "/13.jpg", "/14.jpg", "/15.jpg", "/18.jpg"
-  ];
+    '2.jpg', '7.jpg', '8.jpg', '9.jpg', '10.jpg', '11.jpg', '13.jpg', '14.jpg', '15.jpg', '18.jpg'
+  ].map(assetUrl);
 
   return (
     <section className="py-24 px-4 md:px-10 bg-concrete border-y-[16px] border-ink relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-full opacity-30 mix-blend-multiply pointer-events-none" style={{ backgroundImage: 'url(/19.jpg)', backgroundSize: '100px' }}></div>
+      <div className="absolute top-0 left-0 w-full h-full opacity-30 mix-blend-multiply pointer-events-none" style={{ backgroundImage: `url(${assetUrl('19.jpg')})`, backgroundSize: '100px' }}></div>
       <FloatingWord word="НЕБО" className="bottom-10 right-10 rotate-rand-3 text-paper opacity-20" />
       
       <div className="max-w-7xl mx-auto relative z-10">
@@ -163,7 +164,7 @@ const AboutSection = () => {
         </div>
         
         <div className="mt-20 flex justify-center border-t-8 border-ink pt-10">
-          <img src="/17.jpg" alt="Ornament" className="h-64 object-contain grayscale contrast-200 mix-blend-multiply" onError={(e) => e.currentTarget.src = 'https://picsum.photos/seed/ornament2/600/300?grayscale'} />
+          <img src={assetUrl('17.jpg')} alt="Ornament" className="h-64 object-contain grayscale contrast-200 mix-blend-multiply" onError={(e) => e.currentTarget.src = 'https://picsum.photos/seed/ornament2/600/300?grayscale'} />
         </div>
       </div>
     </section>
@@ -173,7 +174,7 @@ const AboutSection = () => {
 const ContactSection = () => {
   return (
     <footer className="py-32 px-4 bg-ink text-paper flex flex-col items-center justify-center relative overflow-hidden">
-      <div className="absolute inset-0 opacity-40 mix-blend-screen grayscale" style={{ backgroundImage: 'url(/16.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+      <div className="absolute inset-0 opacity-40 mix-blend-screen grayscale" style={{ backgroundImage: `url(${assetUrl('16.jpg')})`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
       
       <div className="relative z-10 border-[12px] border-blood p-12 md:p-20 rotate-rand-3 max-w-3xl text-center bg-ink/95 backdrop-blur-sm shadow-[16px_16px_0_#BB0017]">
         <h2 className="text-6xl md:text-8xl font-heading uppercase mb-8 text-blood">Связь</h2>
